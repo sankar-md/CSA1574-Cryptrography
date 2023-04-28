@@ -1,0 +1,17 @@
+def decrypt():
+    en= input("Enter the message i.e to be decrypted: ").strip()
+    let="abcdefghijklmnopqrstuvwxyz"
+    k = int(input("Enter the key to decrypt: "))
+    de = ""
+    for ch in en:
+        if ch in let:
+            p = let.find(ch)
+            new_p = (p - k) % 26
+            new_ch = let[new_p]
+            de += new_ch
+        else:
+            de += ch
+    print("decrypted message is:\n")
+    print(de)
+
+decrypt()
